@@ -17,10 +17,11 @@ function createDreamTeam(members) {
     if (!members) return false;
     let result = "";
     for (let i = 0; i < members.length; i++) {
-        const element = members[i];
+        let element = members[i];
         if (typeof element === "string" && element.length > 0) {
             // element.search(/\S/) - returns index of 1st not whitespace char
-            result += element[element.search(/\S/)].toUpperCase();
+
+            result += element.trimStart()[0].toUpperCase();
         }
     }
 
